@@ -12,8 +12,8 @@ struct ContentView: View {
     @State public var peso: String = ""
     @State public var altura: String = ""
     @State public var result: Decimal = 0
-    
     @State public var teste: String = ""
+    
     var body: some View {
         ZStack {
             Color("bg")
@@ -34,7 +34,7 @@ struct ContentView: View {
                 
                 HStack {
                     Spacer()
-                    Text(teste)
+                    TestTextField(test: $teste)
                     Spacer()
                 }
                 Spacer()
@@ -50,17 +50,13 @@ struct ContentView: View {
         
         if (result > 0 ) {
             if (result > 0 && result < 18.5) {
-                teste = "Baixo peso"
-                    .fore
+                teste = "1"
             } else if (result >= 18.5 && result <= 24.99){
-                teste = "Normal"
-                $teste.textColor = UIColor.red
+                teste = "2"
             } else if (result >= 25 && result <= 29.99){
-                teste = "Sobrepeso"
-                
+                teste = "3"
             } else if (result >= 30){
-                teste  = "Obesidade"
-                
+                teste  = "4"
             }
         }
     }
@@ -90,6 +86,19 @@ struct NumberTextField: View {
             if !isNumberValid {
                 Text("Please enter a valid number")
                     .font(.caption)
+                    .foregroundColor(.red)
+            }
+        }
+    }
+}
+
+struct TestTextField: View {
+    @Binding var test: String
+    
+    var body: some View {
+        VStack {
+            if test == "1"{
+                Text("Baixo peso")
                     .foregroundColor(.red)
             }
         }
