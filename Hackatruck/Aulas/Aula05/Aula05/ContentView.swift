@@ -1,63 +1,74 @@
-//
-//  ContentView.swift
-//  Aula05
-//
-//  Created by Turma01-12 on 23/08/24.
-//
-
 import SwiftUI
 
 struct ContentView: View {
-    @State private var calcular = false
-    @State public var peso: String = ""
-    @State public var altura: String = ""
-    @State public var result: Decimal = 0
-    @State public var teste: String = ""
+    @State private var peso: String = ""
+    @State private var altura: String = ""
+    @State private var imcResult: String = ""
+    @State private var resultColor: Color = .bg
     
     var body: some View {
         ZStack {
-            Color("bg")
+            Color(resultColor)
                 .edgesIgnoringSafeArea(.all)
             
             VStack (spacing: 10) {
                 Text("Calculadora de IMC")
                     .font(.title)
                     .frame(maxWidth: .infinity, alignment: .top)
-                    .fontWeight(.bold)
-                
+                    .padding(.bottom)
                 
                 NumberTextField(number: $peso, placeholder: "Insira o peso")
                 NumberTextField(number: $altura, placeholder: "Insira a altura")
                 
-                
-                OperationButton(operation: "Calcular", action: imc)
-                
-                HStack {
-                    Spacer()
-                    TestTextField(test: $teste)
-                    Spacer()
+                Button(action: {
+                    self.calculateIMC()
+                }) {
+                    Text("Calcular")
+                        .frame(width: 100)
+                        .padding(15)
+                        .foregroundColor(.white)
+                        .background(.blue)
+                        .cornerRadius(10)
                 }
+                
                 Spacer()
+                
+                Text(imcResult)
+                    .padding()
+                    .foregroundColor(.white)
+                    .font(.system(size: 26))
+                
+                Spacer()
+                
+                Image(.tabelaIMC)
+                    .resizable()
+                    .frame(minWidth: 500)
+                    .aspectRatio(contentMode: .fit)
+                    .frame(height: 200, alignment: .center)
+                    .scaledToFit()
             }
         }
     }
     
-    private func imc() {
-        
-        if let num1 = Decimal(string: peso), let num2 = Decimal(string: altura) {
-            result = (num1 / (num2*num2))
-        }
-        
-        if (result > 0 ) {
-            if (result > 0 && result < 18.5) {
-                teste = "1"
-            } else if (result >= 18.5 && result <= 24.99){
-                teste = "2"
-            } else if (result >= 25 && result <= 29.99){
-                teste = "3"
-            } else if (result >= 30){
-                teste  = "4"
+    private func calculateIMC() {
+        if let peso = Decimal(string: peso), let altura = Decimal(string: altura), altura > 0 {
+            let result = peso / (altura * altura)
+            if result < 18.5 {
+                imcResult = "Baixo peso"
+                resultColor = .baixoPeso
+            } else if result < 24.9 {
+                imcResult = "Peso normal"
+                resultColor = .pesoNormal
+            } else if result < 29.9 {
+                imcResult = "Sobrepeso"
+                resultColor = .sobrepeso
+            } else {
+                imcResult = "Obesidade"
+                resultColor = .obesidade
             }
+        } else {
+            imcResult = "Valores inválidos"
+            resultColor = .gray
         }
     }
 }
@@ -66,55 +77,41 @@ struct NumberTextField: View {
     @Binding var number: String
     var placeholder: String
     
-    // Computed property to check if the input is a valid number
     var isNumberValid: Bool {
         return Float(number) != nil || number.isEmpty
     }
     
+    // Formata o texto da altura conforme o usuário digita
+    private func formatAltura(_ value: String) -> String {
+        let digits = value.replacingOccurrences(of: ".", with: "")
+        
+        if digits.count > 1 {
+            let integerPart = digits.prefix(1)
+            let decimalPart = digits.suffix(digits.count - 1)
+            return "\(integerPart).\(decimalPart)"
+        }
+        return digits
+    }
+    
     var body: some View {
         VStack {
-            TextField(placeholder, text: $number)
-                .keyboardType(.decimalPad)
-                .padding(8)
-                .overlay(
-                    RoundedRectangle(cornerRadius: 8)
-                        .stroke(Color.black, lineWidth: 2)
-                )
-                .background(Color.white)
-                .padding(.horizontal, 12)
+            TextField(placeholder, text: Binding(
+                get: {
+                    self.number
+                },
+                set: {
+                    self.number = formatAltura($0)
+                }
+            ))
+            .multilineTextAlignment(.center)
+            .padding(8)
+            .frame(width: 350)
+            .background(.white)
+            .keyboardType(.decimalPad)
+            .cornerRadius(10)
+            .padding(12)
             
-            if !isNumberValid {
-                Text("Please enter a valid number")
-                    .font(.caption)
-                    .foregroundColor(.red)
-            }
         }
-    }
-}
-
-struct TestTextField: View {
-    @Binding var test: String
-    
-    var body: some View {
-        VStack {
-            if test == "1"{
-                Text("Baixo peso")
-                    .foregroundColor(.red)
-            }
-        }
-    }
-}
-
-struct OperationButton: View {
-    let operation: String
-    let action: () -> Void
-    
-    var body: some View {
-        Button(action: action) {
-            Text(operation)
-        }
-        .padding(.horizontal, 24)
-        .padding(.bottom, 12)
     }
 }
 
