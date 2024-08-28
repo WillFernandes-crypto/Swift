@@ -8,21 +8,26 @@
 import SwiftUI
 
 struct ContentView: View {
+    
     var body: some View {
         
-        NavigationStack {
-            ZStack{
-                paintbrush()
-                    .frame(width: .infinity, height: 700, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
-                    .padding()
-            }
-            Spacer()
-            VStack{
-                NavigationLink(destination: tela01()){
-                    Image("paintbrush")
-                    Text("Mostrar")
+        TabView {
+            tela01()
+                .tabItem {
+                    Label("Rosa", systemImage: "paintbrush")
                 }
-            }
+            tela02()
+                .tabItem {
+                    Label("Azul", systemImage: "paintbrush.pointed")
+                }
+            tela03()
+                .tabItem {
+                    Label("Cinza", systemImage: "paintpalette.fill")
+                }
+            lista()
+                .tabItem {
+                    Label("Lista", systemImage: "list.bullet")
+                }
         }
     }
 }

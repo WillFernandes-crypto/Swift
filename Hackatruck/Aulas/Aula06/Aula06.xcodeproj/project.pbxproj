@@ -7,22 +7,26 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4191061C2C7F881600651250 /* tela02.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4191061B2C7F881600651250 /* tela02.swift */; };
+		4191061E2C7F895C00651250 /* tela03.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4191061D2C7F895C00651250 /* tela03.swift */; };
+		419106202C7F92CD00651250 /* lista.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4191061F2C7F92CD00651250 /* lista.swift */; };
 		41A8B3252C7E5E4800CDA231 /* Aula06App.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41A8B3242C7E5E4800CDA231 /* Aula06App.swift */; };
 		41A8B3272C7E5E4800CDA231 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41A8B3262C7E5E4800CDA231 /* ContentView.swift */; };
 		41A8B3292C7E5E4900CDA231 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 41A8B3282C7E5E4900CDA231 /* Assets.xcassets */; };
 		41A8B32C2C7E5E4900CDA231 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 41A8B32B2C7E5E4900CDA231 /* Preview Assets.xcassets */; };
-		41A8B3332C7E638C00CDA231 /* paintbrush.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41A8B3322C7E638C00CDA231 /* paintbrush.swift */; };
-		41A8B3352C7E688100CDA231 /* tela01.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41A8B3342C7E688100CDA231 /* tela01.swift */; };
+		41A8B3332C7E638C00CDA231 /* tela01.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41A8B3322C7E638C00CDA231 /* tela01.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		4191061B2C7F881600651250 /* tela02.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = tela02.swift; sourceTree = "<group>"; };
+		4191061D2C7F895C00651250 /* tela03.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = tela03.swift; sourceTree = "<group>"; };
+		4191061F2C7F92CD00651250 /* lista.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = lista.swift; sourceTree = "<group>"; };
 		41A8B3212C7E5E4800CDA231 /* Aula06.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Aula06.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		41A8B3242C7E5E4800CDA231 /* Aula06App.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Aula06App.swift; sourceTree = "<group>"; };
 		41A8B3262C7E5E4800CDA231 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		41A8B3282C7E5E4900CDA231 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		41A8B32B2C7E5E4900CDA231 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
-		41A8B3322C7E638C00CDA231 /* paintbrush.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = paintbrush.swift; sourceTree = "<group>"; };
-		41A8B3342C7E688100CDA231 /* tela01.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = tela01.swift; sourceTree = "<group>"; };
+		41A8B3322C7E638C00CDA231 /* tela01.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = tela01.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -57,8 +61,10 @@
 			children = (
 				41A8B3242C7E5E4800CDA231 /* Aula06App.swift */,
 				41A8B3262C7E5E4800CDA231 /* ContentView.swift */,
-				41A8B3322C7E638C00CDA231 /* paintbrush.swift */,
-				41A8B3342C7E688100CDA231 /* tela01.swift */,
+				41A8B3322C7E638C00CDA231 /* tela01.swift */,
+				4191061B2C7F881600651250 /* tela02.swift */,
+				4191061D2C7F895C00651250 /* tela03.swift */,
+				4191061F2C7F92CD00651250 /* lista.swift */,
 				41A8B3282C7E5E4900CDA231 /* Assets.xcassets */,
 				41A8B32A2C7E5E4900CDA231 /* Preview Content */,
 			);
@@ -143,10 +149,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4191061E2C7F895C00651250 /* tela03.swift in Sources */,
 				41A8B3272C7E5E4800CDA231 /* ContentView.swift in Sources */,
-				41A8B3332C7E638C00CDA231 /* paintbrush.swift in Sources */,
-				41A8B3352C7E688100CDA231 /* tela01.swift in Sources */,
+				41A8B3332C7E638C00CDA231 /* tela01.swift in Sources */,
+				419106202C7F92CD00651250 /* lista.swift in Sources */,
 				41A8B3252C7E5E4800CDA231 /* Aula06App.swift in Sources */,
+				4191061C2C7F881600651250 /* tela02.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
