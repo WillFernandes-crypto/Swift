@@ -20,7 +20,6 @@ struct modo2: View {
                 
                 VStack {
                     
-                    
                     VStack {
                         Text("Modo 2")
                             .foregroundColor(.white)
@@ -32,41 +31,47 @@ struct modo2: View {
                     
                     Spacer()
                     
-                    Rectangle()
-                            .frame(width: 300, height: 200)
-                            .foregroundColor(.colorButton)
-                            .clipShape(RoundedRectangle(cornerRadius: 5))
-                            .overlay(
-                                Text("Hello World")
-                            )
-                    
                     NavigationStack {
-                        Text("Thiago\nSobrenome: Pereira")
-                            .frame(width: 300, height: 200)
-                            .multilineTextAlignment(.center)
-                            .padding(10)
-                            .foregroundColor(.white)
-                            .background(.colorButton)
-                            .clipShape(RoundedRectangle(cornerRadius: 5))
                         
-                        Button("Acessar a tela") {
-                            isPresenting = true
-                        }
-                        .navigationDestination(
-                            isPresented: $isPresenting){
-                                modo2_2()
+                        Spacer()
+                        
+                        VStack{
+                            
+                            Spacer()
+                            
+                            Text("Tiago")
+                                .padding(2)
+                            Text("Bem-vindo, Tiago")
+                                .font(/*@START_MENU_TOKEN@*/.title/*@END_MENU_TOKEN@*/)
+                                .bold()
+                            
+                            Spacer()
+                            
+                            NavigationLink(destination: modo2_2()){
+                                Text("Acessar Tela")
+                                    .padding(2)
+                                    .frame(width: 120, height: 25)
+                                    .padding(10)
+                                    .foregroundColor(.white)
+                                    .background(.blue)
+                                    .clipShape(RoundedRectangle(cornerRadius: 15))
+                                    .shadow(radius: /*@START_MENU_TOKEN@*/10/*@END_MENU_TOKEN@*/)
                             }
-                            .frame(width: 120, height: 25)
-                            .padding(10)
-                            .foregroundColor(.white)
-                            .background(.blue)
-                            .clipShape(RoundedRectangle(cornerRadius: 15))
+                        }
+                        .frame(width: 300, height: 200)
+                        .multilineTextAlignment(.center)
+                        .padding(10)
+                        .foregroundColor(.white)
+                        .background(.colorButton)
+                        .clipShape(RoundedRectangle(cornerRadius: 10))
+                        
+                        Spacer()
+                        
                     }
-                    Spacer()
                 }
             }
+            
         }
-        
     }
 }
 

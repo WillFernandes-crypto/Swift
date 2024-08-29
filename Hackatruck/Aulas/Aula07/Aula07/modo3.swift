@@ -8,8 +8,40 @@
 import SwiftUI
 
 struct modo3: View {
+    @Environment(\.dismiss) var dismiss
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        NavigationStack{
+            
+            ZStack{
+                Color(.bg)
+                    .edgesIgnoringSafeArea(.all)
+                
+                VStack {
+                    
+                    
+                    VStack {
+                        Text("Sheet View")
+                            .foregroundColor(.white)
+                            .aspectRatio(contentMode: .fit)
+                            .frame(width: 156, height: 80)
+                            .font(.title)
+                            .bold()
+                    }
+                    
+                    Spacer()
+                    
+                    Text("Nome: Thiago\nSobrenome: Pereira")
+                        .frame(width: 190, height: 90)
+                        .multilineTextAlignment(.center)
+                        .padding(10)
+                        .foregroundColor(.white)
+                        .background(.colorButton)
+                        .clipShape(RoundedRectangle(cornerRadius: 10))
+                    
+                    Spacer()
+                }
+            }
+        }
     }
 }
 

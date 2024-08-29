@@ -50,23 +50,23 @@ struct ContentView: View {
                     }
                     
                     Button("Modo 3") {
-                        isPresenting = true
+                        isPresenting.toggle()
+                    }
+                    .sheet(isPresented: $isPresenting) {
+                        modo3()
                     }
                     .frame(width: 150, height: 60)
                     .padding(10)
                     .foregroundColor(.white)
                     .background(.colorButton)
                     .clipShape(RoundedRectangle(cornerRadius: 5))
-                    .navigationDestination(
-                        isPresented: $isPresenting){
-                            modo3()
-                        }
                     Spacer()
                 }
             }
         }
     }
 }
+
 
 #Preview {
     ContentView()

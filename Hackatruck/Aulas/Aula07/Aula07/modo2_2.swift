@@ -8,8 +8,45 @@
 import SwiftUI
 
 struct modo2_2: View {
+    @State var isPresenting = false
+    
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        NavigationStack{
+            
+            ZStack{
+                Color(.bg)
+                    .edgesIgnoringSafeArea(.all)
+                
+                VStack {
+                    
+                    VStack {
+                        Text("Modo 2")
+                            .foregroundColor(.white)
+                            .aspectRatio(contentMode: .fit)
+                            .frame(width: 156, height: 80)
+                            .font(.title)
+                            .bold()
+                    }
+                    
+                    Spacer()
+                    
+                    NavigationStack {
+                        VStack{
+                            Text("Volte, Tiago!!")
+                                .font(/*@START_MENU_TOKEN@*/.title/*@END_MENU_TOKEN@*/)
+                                .bold()
+                        }
+                    }
+                    .frame(width: 150, height: 90)
+                    .foregroundColor(.white)
+                    .background(.colorButton)
+                    .clipShape(RoundedRectangle(cornerRadius: 10))
+                    
+                    Spacer()
+                    
+                }
+            }
+        }
     }
 }
 

@@ -36,7 +36,7 @@ struct modo1: View {
                             .padding(10)
                             .foregroundColor(.white)
                             .background(.colorButton)
-                            .clipShape(RoundedRectangle(cornerRadius: 5))
+                            .clipShape(RoundedRectangle(cornerRadius: 10))
                     
                     Spacer()
                 }
