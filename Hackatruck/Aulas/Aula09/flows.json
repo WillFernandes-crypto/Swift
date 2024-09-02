@@ -1,0 +1,256 @@
+[
+    {
+        "id": "d812ed75f7ba009a",
+        "type": "tab",
+        "label": "Flow 1",
+        "disabled": false,
+        "info": "",
+        "env": []
+    },
+    {
+        "id": "9356fade7ec043d7",
+        "type": "http in",
+        "z": "d812ed75f7ba009a",
+        "name": "",
+        "url": "/wilsonhacka",
+        "method": "get",
+        "upload": false,
+        "swaggerDoc": "",
+        "x": 230,
+        "y": 140,
+        "wires": [
+            [
+                "a301f7d6b582d161",
+                "9f784d6cbb411ab2"
+            ]
+        ]
+    },
+    {
+        "id": "a301f7d6b582d161",
+        "type": "debug",
+        "z": "d812ed75f7ba009a",
+        "name": "debug 26",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 460,
+        "y": 200,
+        "wires": []
+    },
+    {
+        "id": "3c8dd8073235ad68",
+        "type": "http in",
+        "z": "d812ed75f7ba009a",
+        "name": "",
+        "url": "/wilsonhacka",
+        "method": "post",
+        "upload": false,
+        "swaggerDoc": "",
+        "x": 110,
+        "y": 300,
+        "wires": [
+            [
+                "ba5a8ce95d2cec28"
+            ]
+        ]
+    },
+    {
+        "id": "a0da7aba264ad9b2",
+        "type": "cloudantplus out",
+        "z": "d812ed75f7ba009a",
+        "name": "",
+        "cloudant": "e2a8d2c4fdddf8a3",
+        "database": "wilsonufca",
+        "service": "_ext_",
+        "payonly": true,
+        "operation": "insert",
+        "x": 490,
+        "y": 300,
+        "wires": [
+            [
+                "dce4c2f61a9ab473"
+            ]
+        ]
+    },
+    {
+        "id": "bac4811b67578b31",
+        "type": "http response",
+        "z": "d812ed75f7ba009a",
+        "name": "",
+        "statusCode": "",
+        "headers": {},
+        "x": 650,
+        "y": 140,
+        "wires": []
+    },
+    {
+        "id": "dce4c2f61a9ab473",
+        "type": "http response",
+        "z": "d812ed75f7ba009a",
+        "name": "",
+        "statusCode": "",
+        "headers": {},
+        "x": 650,
+        "y": 300,
+        "wires": []
+    },
+    {
+        "id": "9f784d6cbb411ab2",
+        "type": "cloudantplus in",
+        "z": "d812ed75f7ba009a",
+        "name": "",
+        "cloudant": "e2a8d2c4fdddf8a3",
+        "database": "wilsonufca",
+        "service": "_ext_",
+        "search": "_all_",
+        "design": "",
+        "index": "",
+        "x": 450,
+        "y": 120,
+        "wires": [
+            [
+                "bac4811b67578b31"
+            ]
+        ]
+    },
+    {
+        "id": "85c667f7faefd980",
+        "type": "http in",
+        "z": "d812ed75f7ba009a",
+        "name": "",
+        "url": "/wilsonhacka",
+        "method": "delete",
+        "upload": false,
+        "swaggerDoc": "",
+        "x": 240,
+        "y": 440,
+        "wires": [
+            [
+                "782281835385f2ca"
+            ]
+        ]
+    },
+    {
+        "id": "782281835385f2ca",
+        "type": "cloudantplus out",
+        "z": "d812ed75f7ba009a",
+        "name": "",
+        "cloudant": "e2a8d2c4fdddf8a3",
+        "database": "wilsonufca",
+        "service": "_ext_",
+        "payonly": true,
+        "operation": "delete",
+        "x": 450,
+        "y": 440,
+        "wires": [
+            [
+                "19d1277cef216749"
+            ]
+        ]
+    },
+    {
+        "id": "19d1277cef216749",
+        "type": "http response",
+        "z": "d812ed75f7ba009a",
+        "name": "",
+        "statusCode": "",
+        "headers": {},
+        "x": 650,
+        "y": 440,
+        "wires": []
+    },
+    {
+        "id": "abf8af778ed27324",
+        "type": "http in",
+        "z": "d812ed75f7ba009a",
+        "name": "",
+        "url": "/wilsonhacka",
+        "method": "put",
+        "upload": false,
+        "swaggerDoc": "",
+        "x": 230,
+        "y": 540,
+        "wires": [
+            [
+                "ad7c0da9ab7cc0d9",
+                "2cfba4711ff58403"
+            ]
+        ]
+    },
+    {
+        "id": "ad7c0da9ab7cc0d9",
+        "type": "cloudantplus out",
+        "z": "d812ed75f7ba009a",
+        "name": "",
+        "cloudant": "e2a8d2c4fdddf8a3",
+        "database": "wilsonufca",
+        "service": "_ext_",
+        "payonly": true,
+        "operation": "insert",
+        "x": 450,
+        "y": 540,
+        "wires": [
+            [
+                "52f0ed20a4dc588a"
+            ]
+        ]
+    },
+    {
+        "id": "52f0ed20a4dc588a",
+        "type": "http response",
+        "z": "d812ed75f7ba009a",
+        "name": "",
+        "statusCode": "",
+        "headers": {},
+        "x": 650,
+        "y": 540,
+        "wires": []
+    },
+    {
+        "id": "2cfba4711ff58403",
+        "type": "debug",
+        "z": "d812ed75f7ba009a",
+        "name": "debug 27",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 440,
+        "y": 620,
+        "wires": []
+    },
+    {
+        "id": "ba5a8ce95d2cec28",
+        "type": "split",
+        "z": "d812ed75f7ba009a",
+        "name": "",
+        "splt": "\\n",
+        "spltType": "str",
+        "arraySplt": 1,
+        "arraySpltType": "len",
+        "stream": false,
+        "addname": "",
+        "x": 310,
+        "y": 300,
+        "wires": [
+            [
+                "a0da7aba264ad9b2"
+            ]
+        ]
+    },
+    {
+        "id": "e2a8d2c4fdddf8a3",
+        "type": "cloudantplus",
+        "host": "https://8685b21f-dcdc-4864-a9bc-84e5121ccc12-bluemix.cloudantnosqldb.appdomain.cloud",
+        "name": "",
+        "useapikey": true
+    }
+]
