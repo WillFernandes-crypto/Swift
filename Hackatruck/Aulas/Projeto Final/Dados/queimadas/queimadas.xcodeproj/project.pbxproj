@@ -11,6 +11,8 @@
 		C51C58FB2C8F699200E29C3A /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C51C58FA2C8F699200E29C3A /* ContentView.swift */; };
 		C51C58FD2C8F699400E29C3A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C51C58FC2C8F699400E29C3A /* Assets.xcassets */; };
 		C51C59002C8F699400E29C3A /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C51C58FF2C8F699400E29C3A /* Preview Assets.xcassets */; };
+		C5A8E4DC2C90B0D800BBDF86 /* mapaCariri.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5A8E4DB2C90B0D800BBDF86 /* mapaCariri.swift */; };
+		C5A8E4DE2C90B28300BBDF86 /* graficos.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5A8E4DD2C90B28300BBDF86 /* graficos.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -19,6 +21,8 @@
 		C51C58FA2C8F699200E29C3A /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		C51C58FC2C8F699400E29C3A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		C51C58FF2C8F699400E29C3A /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		C5A8E4DB2C90B0D800BBDF86 /* mapaCariri.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = mapaCariri.swift; sourceTree = "<group>"; };
+		C5A8E4DD2C90B28300BBDF86 /* graficos.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = graficos.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -52,7 +56,9 @@
 			isa = PBXGroup;
 			children = (
 				C51C58F82C8F699200E29C3A /* queimadasApp.swift */,
+				C5A8E4DD2C90B28300BBDF86 /* graficos.swift */,
 				C51C58FA2C8F699200E29C3A /* ContentView.swift */,
+				C5A8E4DB2C90B0D800BBDF86 /* mapaCariri.swift */,
 				C51C58FC2C8F699400E29C3A /* Assets.xcassets */,
 				C51C58FE2C8F699400E29C3A /* Preview Content */,
 			);
@@ -139,6 +145,8 @@
 			files = (
 				C51C58FB2C8F699200E29C3A /* ContentView.swift in Sources */,
 				C51C58F92C8F699200E29C3A /* queimadasApp.swift in Sources */,
+				C5A8E4DC2C90B0D800BBDF86 /* mapaCariri.swift in Sources */,
+				C5A8E4DE2C90B28300BBDF86 /* graficos.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

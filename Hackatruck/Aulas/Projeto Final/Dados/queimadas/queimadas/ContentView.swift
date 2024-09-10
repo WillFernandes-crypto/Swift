@@ -37,72 +37,79 @@ struct ContentView: View {
                     VStack{
                         
                         VStack{
-                            ForEach(arrayDataInfo){ data in
+                            
+                            Spacer()
+                            
+                            Text("Gráfico 1")
+                                .font(.title2)
+                                .frame(alignment: .leading)
+                            
+                            Chart {
+                                BarMark(x: .value("Type", "bird"),
+                                        y: .value("Population", 1))
+                                .opacity(0.5)
                                 
-                                Chart {
-                                    BarMark(x: .value("Type", "bird"),
-                                            y: .value("Population", 1))
-                                    .opacity(0.5)
-                                    
-                                    BarMark(x: .value("Type", "dog"),
-                                            y: .value("Population", 2))
-                                    .opacity(0.5)
-                                    
-                                    BarMark(x: .value("Type", "cat"),
-                                            y: .value("Population", 3))
-                                }
-                                .aspectRatio(1, contentMode: .fit)
-                                .padding()
+                                BarMark(x: .value("Type", "dog"),
+                                        y: .value("Population", 2))
+                                .opacity(0.5)
                                 
-                                Text(data.info)
-                                    .lineLimit(10)
-                                    .allowsTightening(true)
-                                    .minimumScaleFactor(0.8)
-                                    .frame(width: .infinity, height: 60)
-                                    .border(.red)
-                                    .multilineTextAlignment(.center)
-                                
-                                Chart {
-                                    ForEach(catData) { data in
-                                        LineMark(x: .value("Year", data.year),
-                                                 y: .value("Population", data.population))
-                                    }
-                                    .interpolationMethod(.cardinal)
-                                    .symbol(by: .value("Pet type", "cat"))
-                                    ForEach(catData) { data in
-                                        AreaMark(x: .value("Year", data.year),
-                                                 y: .value("Population", data.population))
-                                    }
-                                    .interpolationMethod(.cardinal)
-                                    .foregroundStyle(linearGradient)
-                                }
-                                .chartXScale(domain: 1998...2024)
-                                .chartLegend(.hidden)
-                                .chartXAxis {
-                                    AxisMarks(values: [2000, 2010, 2015, 2022]) { value in
-                                        AxisGridLine()
-                                        AxisTick()
-                                        if let year = value.as(Int.self) {
-                                            AxisValueLabel(String(year),
-                                                           centered: false,
-                                                           anchor: .top)
-                                        }
-                                    }
-                                }
-                                .aspectRatio(1, contentMode: .fit)
-                                .padding()
-                                
-                                Text(data.info)
-                                    .lineLimit(10)
-                                    .allowsTightening(true)
-                                    .minimumScaleFactor(0.8)
-                                    .frame(width: .infinity, height: 60)
-                                    .border(.red)
-                                    .multilineTextAlignment(.center)
-                                
+                                BarMark(x: .value("Type", "cat"),
+                                        y: .value("Population", 3))
                             }
-                            .frame(maxWidth: .infinity, alignment: .leading)
+                            .aspectRatio(1, contentMode: .fit)
+                            .padding()
+                            
+                            Text("Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec efficitur, arcu ac euismod mattis, mauris leo blandit velit, nec maximus lorem ex et arcu. Vestibulum gravida, tortor eget iaculis accumsan, leo metus semper lorem, et scelerisque dui sem nec sapien. Nulla leo nisi, hendrerit ac libero eu, feugiat suscipit magna.")
+                                .lineLimit(10)
+                                .allowsTightening(true)
+                                .minimumScaleFactor(0.8)
+                                .multilineTextAlignment(.center)
+                                .padding()
+                            
+                            Text("Gráfico 2")
+                                .font(.title2)
+                                .lineLimit(10)
+                                .allowsTightening(true)
+                                .minimumScaleFactor(0.8)
+                            
+                            Chart {
+                                ForEach(catData) { data in
+                                    LineMark(x: .value("Year", data.year),
+                                             y: .value("Population", data.population))
+                                }
+                                .interpolationMethod(.cardinal)
+                                .symbol(by: .value("Pet type", "cat"))
+                                ForEach(catData) { data in
+                                    AreaMark(x: .value("Year", data.year),
+                                             y: .value("Population", data.population))
+                                }
+                                .interpolationMethod(.cardinal)
+                                .foregroundStyle(linearGradient)
+                            }
+                            .chartXScale(domain: 1998...2024)
+                            .chartLegend(.hidden)
+                            .chartXAxis {
+                                AxisMarks(values: [2000, 2010, 2015, 2022]) { value in
+                                    AxisGridLine()
+                                    AxisTick()
+                                    if let year = value.as(Int.self) {
+                                        AxisValueLabel(String(year),
+                                                       centered: false,
+                                                       anchor: .top)
+                                    }
+                                }
+                            }
+                            .aspectRatio(1, contentMode: .fit)
+                            .padding()
+                            
+                            Text("Lorem ipsum dolor")
+                                .lineLimit(10)
+                                .allowsTightening(true)
+                                .minimumScaleFactor(0.8)
+                                .padding()
+                            
                         }
+                        .frame(maxWidth: .infinity)
                     }
                 }
             }
@@ -142,21 +149,6 @@ var data: [PetDataSeries] {
 let linearGradient = LinearGradient(gradient: Gradient(colors: [Color.accentColor.opacity(0.4), Color.accentColor.opacity(0)]),
                                     startPoint: .top,
                                     endPoint: .bottom)
-
-// Info sobre os graficos
-struct Data : Identifiable {
-    var id: Int
-    var info : String
-}
-
-var arrayDataInfo = [
-    
-    Data(id: 1, info: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec efficitur, arcu ac euismod mattis, mauris leo blandit velit, nec maximus lorem ex et arcu. Vestibulum gravida, tortor eget iaculis accumsan, leo metus semper lorem, et scelerisque dui sem nec sapien. Nulla leo nisi, hendrerit ac libero eu, feugiat suscipit magna."),
-    
-    Data(id: 2, info: "Lorem ipsum dolor")
-    
-]
-
 
 
 #Preview {
